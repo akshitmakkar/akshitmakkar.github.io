@@ -1,0 +1,67 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px dashed var(--border-dashed);
+  border-bottom: 1px dashed var(--border-dashed);
+  padding: 32px 0;
+  background: var(--bg-card);
+}
+
+.fadeMaskLeft,
+.fadeMaskRight {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fadeMaskLeft {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-card), transparent);
+}
+
+.fadeMaskRight {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-card), transparent);
+}
+
+.track {
+  display: flex;
+  gap: 48px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 80px;
+  opacity: 0.75;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.item:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}

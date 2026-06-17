@@ -1,0 +1,131 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+}
+
+.nav.scrolled {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-dashed);
+  padding: 14px 0;
+}
+
+[data-theme="light"] .nav.scrolled {
+  background: rgba(248, 248, 255, 0.85);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--purple);
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+  margin-right: auto;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.links {
+  display: flex;
+  gap: 8px;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.link:hover {
+  color: var(--text-primary);
+  background: var(--purple-glow);
+}
+
+.link.active {
+  color: var(--purple);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dashed);
+  border-radius: 20px;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.themeToggle:hover {
+  border-color: var(--purple);
+  color: var(--purple);
+}
+
+.toggleTrack {
+  width: 28px;
+  height: 14px;
+  background: var(--border-dashed);
+  border-radius: 7px;
+  position: relative;
+  display: inline-block;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  background: var(--purple);
+  border-radius: 50%;
+  transition: left 0.2s;
+}
+
+.toggleThumb.left {
+  left: 2px;
+}
+
+.toggleThumb.right {
+  left: 16px;
+}
+
+@media (max-width: 600px) {
+  .links {
+    gap: 4px;
+  }
+  .link {
+    padding: 6px 10px;
+    font-size: 0.82rem;
+  }
+}

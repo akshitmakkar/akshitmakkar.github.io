@@ -1,0 +1,36 @@
+.footer {
+  border-top: 1px dashed var(--border-dashed);
+  padding: 28px 0;
+  margin-top: 40px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.accent {
+  color: var(--purple);
+}
+
+.links {
+  display: flex;
+  gap: 16px;
+  color: var(--text-muted);
+}
+
+.links a {
+  transition: color 0.2s, transform 0.2s;
+  display: flex;
+}
+
+.links a:hover {
+  color: var(--purple);
+  transform: translateY(-2px);
+}
